@@ -25,41 +25,18 @@ public class Nivel {
     }
 
     private String titulo;
-    private int altura;
-    private String mapa;
+    private char[][] mapa;
     
-    public Nivel(String titulo, String mapa, int altura){
+    public Nivel(String titulo, char[][] mapa){
         this.mapa = mapa;
         this.titulo = titulo;
-        this.altura = altura;
     }
 
     /**
      * @return the mapa
      */
-    protected String getMapa() {
+    protected char[][] getMapa() {
         return mapa;
     }
 
-    /**
-     * @param mapa the mapa to set
-     */
-    protected void setMapa(String mapa) {
-        this.mapa = mapa;
-    }
-
-    /**
-     * @return the altura
-     */
-    protected int getAltura() {
-        return altura;
-    }
-
-    /**
-     * @param altura the altura to set
-     */
-    protected void setAltura(int altura) {
-        this.altura = altura;
-    }
-    
 }

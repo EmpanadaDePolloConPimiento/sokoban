@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class LevelManager {
     //cargar nivel
     private static ArrayList<Nivel> niveles = new ArrayList<>();
-    private String rutaArchivo = "niveles/prueba.txt"; // Ruta del archivo
+    private String rutaArchivo = "niveles/niveles.txt"; // Ruta del archivo
     public void cargarNiveles(){
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String linea;
@@ -26,7 +26,9 @@ public class LevelManager {
             while ((linea = br.readLine()) != null) { // Lee línea por línea
                 if(linea.equals("")){
                     //Añade el nivel
-                    getNiveles().add(new Nivel(titulo, mapa, getAlturaNivel(mapa)));
+                    char[][] mapaNivel = convertidorDeMapa(mapa);
+                    niveles.add(new Nivel(titulo, mapaNivel));
+                    
                     //Reset de valores para nuevo nivel
                     titulo = "";
                     mapa = "";
